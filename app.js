@@ -1,7 +1,7 @@
 let express=require('express')
 let morgan = require('morgan')
 let app=express()
-app.use(morgan('common'))
+app.use(morgan(':remote-addr - :remote-user ":method :url HTTP/:http-version" :status :res[content-length]'))
 app.get('/',(req,res)=>{
 	res.send('Hello World!')
 })
